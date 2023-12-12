@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Logo from "@/public/Anagat-buhay-logo.svg";
 
@@ -9,12 +11,12 @@ import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
   return (
-    <header className=" px-8 py-3 flex justify-between items-center">
+    <header className="fixed z-50 flex items-center px-8 py-3 space-x-16 transform -translate-x-1/2 border-2 bottom-4 left-1/2 justify-evenly bg-background rounded-3xl w-fit">
       <Link href="/">
         <Image src={Logo} alt="Logo of angat buhay" height={24} width={24} />
       </Link>
       <Links />
-      <Button>Get Involved</Button>
+      <Button className=" text-background">Get Involved</Button>
     </header>
   );
 }

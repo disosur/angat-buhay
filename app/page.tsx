@@ -2,20 +2,22 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-import creative from "@/public/creative&effective.png";
 import hero1 from "@/public/Hero-1.webp";
 import hero2 from "@/public/Hero-2.webp";
+import creative from "@/public/Creative.webp";
+
 import NewsCard from "@/components/Shared/NewsCard";
+import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   return (
     <main className="container px-8 mx-auto space-y-48">
       <section
         id="hero-section"
-        className="flex flex-col items-center justify-center gap-8 my-14">
+        className="flex flex-col items-center gap-8 my-14">
         <h1 className=" text-[180px] font-bold flex flex-col">
           <div className="flex items-center gap-10">
-            <span className="text-pink-400 ">ANGAT</span>
+            <span className="text-primary ">ANGAT</span>
             <Image
               src={hero1}
               alt="hero image 1"
@@ -25,7 +27,7 @@ export default function Home() {
             />
           </div>
           <div className="flex flex-row-reverse items-center gap-10">
-            <span className=" text-sky-400">BUHAY</span>
+            <span className=" text-secondary">BUHAY</span>
             <Image
               src={hero2}
               alt="hero image 2"
@@ -36,30 +38,30 @@ export default function Home() {
           </div>
         </h1>
         <div className="space-x-8 ">
-          <Button>Get involve</Button>
           <Button variant="outline">Learn about us</Button>
         </div>
       </section>
 
+      <Separator />
       <section id="quote" className="flex items-center mx-8 my-80 h-96">
         <h3 className="text-4xl text-center">
           "Empowering Dreams, Building Communities: Join Our{" "}
-          <span className="font-bold text-pink-400">Bayanihan Movement </span>
+          <span className="font-bold text-primary">Bayanihan Movement </span>
           for Dignity and Hope. Be a part of the{" "}
-          <span className="font-bold text-sky-400">
+          <span className="font-bold text-secondary">
             Largest Volunteer Network{" "}
           </span>
           in the country Creating Positive Change in Marginalized Communities."
         </h3>
       </section>
+      <Separator />
 
-      {/*
       <section id="core-values" className="flex">
         <Image
           src={creative}
           alt="yes"
-          width={676}
-          height={735}
+          width={500}
+          height={500}
           className=" rounded-2xl"
         />
         <div>
@@ -71,25 +73,8 @@ export default function Home() {
               part of the change.
             </p>
           </div>
-          <div>
-            <h3>Creative & Effective Responsiveness</h3>
-            <p>
-              We respond to evolving community needs with creativity and
-              agility, embracing new solutions and empowering individuals to be
-              part of the change.
-            </p>
-          </div>
-          <div>
-            <h3>Creative & Effective Responsiveness</h3>
-            <p>
-              We respond to evolving community needs with creativity and
-              agility, embracing new solutions and empowering individuals to be
-              part of the change.
-            </p>
-          </div>
         </div>
       </section>
-*/}
 
       <section id="more info section" className="space-y-20 text-lg">
         <div className="flex flex-row justify-evenly">
@@ -152,7 +137,9 @@ export default function Home() {
           <NewsCard />
           <NewsCard />
         </div>
-        <Link href="/">Learn news</Link>
+        <Link href="/" className="hover:text-primary">
+          Learn news
+        </Link>
       </section>
 
       <section id="pillars"></section>

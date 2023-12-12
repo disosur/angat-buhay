@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="text-gray-600 body-font">
+    <footer className="my-20 text-gray-600 body-font">
       <div className="container flex flex-col items-center px-5 py-8 mx-auto sm:flex-row">
         <a className="flex items-center justify-center font-medium text-gray-900 title-font md:justify-start">
           <Image src={Logo} alt="Logo of angat buhay" height={24} width={24} />
