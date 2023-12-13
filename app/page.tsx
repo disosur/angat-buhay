@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 import hero1 from "@/public/Hero-1.webp";
@@ -8,6 +7,8 @@ import creative from "@/public/Creative.webp";
 
 import NewsCard from "@/components/Shared/NewsCard";
 import { Separator } from "@/components/ui/separator";
+import { Contact } from "@/components/Shared/ContactForm";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -138,13 +139,15 @@ export default function Home() {
           <NewsCard />
         </div>
         <Link href="/" className="hover:text-primary">
-          Learn news
+          More news
         </Link>
       </section>
 
       <section id="pillars"></section>
 
-      <section id="contact"></section>
+      <section id="contact">
+        <Contact />
+      </section>
     </main>
   );
 }

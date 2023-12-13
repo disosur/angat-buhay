@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 import {
   Card,
@@ -26,6 +27,7 @@ export default function NewsCard() {
           2, 2023) Sa loob lamang ng limang buwan, mahigit 6,000 pasyente ang
           nabigyan ng kalingang medikal ng Angat Buhay Foundation ni...
         </p>
+        <Link href="/">Read more</Link>
       </CardContent>
     </Card>
   );

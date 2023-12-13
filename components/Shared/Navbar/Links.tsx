@@ -1,18 +1,28 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const navigationLinks = [
   {
     name: "About",
-    href: "/",
+    href: "/about",
   },
   {
     name: "News",
-    href: "/",
+    href: "/news",
   },
   {
-    name: "Who we are",
-    href: "/",
+    name: "Our People",
+    href: "/our-people",
   },
   {
     name: "Museo ng pag-asa",
@@ -22,7 +32,7 @@ const navigationLinks = [
 
 export default function Links() {
   return (
-    <nav className=" space-x-4">
+    <nav className="space-x-4 ">
       {navigationLinks.map((data) => (
         <Link key={data.name} href={data.href}>
           {data.name}
