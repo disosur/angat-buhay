@@ -13,7 +13,13 @@ export default function Navbar() {
   return (
     <header className="fixed z-50 flex items-center px-8 py-3 space-x-16 transform -translate-x-1/2 border-2 bottom-4 left-1/2 justify-evenly bg-background rounded-3xl w-fit">
       <Link href="/">
-        <Image src={Logo} alt="Logo of angat buhay" height={24} width={24} />
+        <Image
+          src={Logo}
+          alt="Logo of angat buhay"
+          height={24}
+          width={24}
+          className="w-full h-auto"
+        />
       </Link>
       <Links />
       <Link href="#contact">

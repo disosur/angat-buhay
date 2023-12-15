@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -28,7 +27,9 @@ const formSchema = z.object({
   Email: z.string().email({
     message: "Please enter your valid Email address.",
   }),
-  Category: z.string().email(),
+  Category: z.string().email({
+    message: "Please choose a way to get involved.",
+  }),
   Message: z.string().min(10, {
     message: "Bio must be at least 10 characters.",
   }),
