@@ -4,6 +4,7 @@ import Link from "next/link";
 import hero1 from "@/public/Hero-1.webp";
 import hero2 from "@/public/Hero-2.webp";
 import creative from "@/public/Creative.webp";
+import Logo from "@/public/Anagat-buhay-logo.svg";
 
 import NewsCard from "@/components/Shared/NewsCard";
 import { Separator } from "@/components/ui/separator";
@@ -145,8 +146,17 @@ export default function Home() {
 
       <section id="pillars"></section>
 
-      <section id="contact">
-        <Contact />
+      <section
+        id="contact"
+        className="flex flex-col items-center justify-center gap-8">
+        <div className="flex flex-col items-center space-y-4">
+          <Image src={Logo} alt="Logo of angat buhay" height={48} width={48} />
+          <h2 className="text-4xl font-semibold text-primary">Get Involved!</h2>
+        </div>
+
+        <div className="w-96">
+          <Contact />
+        </div>
       </section>
     </main>
   );

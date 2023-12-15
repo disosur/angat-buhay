@@ -13,12 +13,24 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 
 import * as z from "zod";
 
 const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
+  Email: z.string().email({
+    message: "Please enter your valid Email address.",
+  }),
+  Category: z.string().email(),
+  Message: z.string().min(10, {
+    message: "Bio must be at least 10 characters.",
   }),
 });
 
@@ -26,7 +38,9 @@ export function Contact() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      Email: "",
+      Category: "",
+      Message: "",
     },
   });
 
@@ -36,24 +50,66 @@ export function Contact() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-1 ">
         <FormField
           control={form.control}
-          name="username"
+          name="Email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Your Email</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input type="email" placeholder="Email" {...field} />
               </FormControl>
-              <FormDescription>
-                This is your public display name.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+
+        <FormField
+          control={form.control}
+          name="Category"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Category</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Category" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="partnerships@angatbuhay.ph">
+                    Partner
+                  </SelectItem>
+                  <SelectItem value="donate@angatbuhay.ph">
+                    Contribute
+                  </SelectItem>
+                  <SelectItem value="info@angatbuhay.ph">Volunteer</SelectItem>
+                </SelectContent>
+              </Select>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="Message"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Message</FormLabel>
+              <FormControl>
+                <Textarea
+                  placeholder="Message"
+                  className="h-40 resize-none"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button type="submit" className="w-full text-background">
+          Submit
+        </Button>
       </form>
     </Form>
   );

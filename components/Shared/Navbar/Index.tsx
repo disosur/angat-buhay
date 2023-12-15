@@ -16,7 +16,9 @@ export default function Navbar() {
         <Image src={Logo} alt="Logo of angat buhay" height={24} width={24} />
       </Link>
       <Links />
-      <Button className=" text-background">Get Involved</Button>
+      <Link href="#contact">
+        <Button className=" text-background">Get Involved</Button>
+      </Link>
     </header>
   );
 }
