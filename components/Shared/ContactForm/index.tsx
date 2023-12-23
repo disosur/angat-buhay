@@ -30,6 +30,9 @@ const formSchema = z.object({
   Category: z.string().email({
     message: "Please choose a way to get involved.",
   }),
+  Subject: z.string().min(10, {
+    message: "Add a subject to your message",
+  }),
   Message: z.string().min(10, {
     message: "Bio must be at least 10 characters.",
   }),
@@ -41,6 +44,7 @@ export function Contact() {
     defaultValues: {
       Email: "",
       Category: "",
+      Subject: "",
       Message: "",
     },
   });
@@ -51,63 +55,78 @@ export function Contact() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-1 ">
-        <FormField
-          control={form.control}
-          name="Email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Your Email</FormLabel>
-              <FormControl>
-                <Input type="email" placeholder="Email" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 ">
+        <div className="space-y-2">
+          <FormField
+            control={form.control}
+            name="Email"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input type="email" placeholder="Email" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <FormField
-          control={form.control}
-          name="Category"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Category</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Category" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="partnerships@angatbuhay.ph">
-                    Partner
-                  </SelectItem>
-                  <SelectItem value="donate@angatbuhay.ph">
-                    Contribute
-                  </SelectItem>
-                  <SelectItem value="info@angatbuhay.ph">Volunteer</SelectItem>
-                </SelectContent>
-              </Select>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+          <FormField
+            control={form.control}
+            name="Category"
+            render={({ field }) => (
+              <FormItem>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Category" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="partnerships@angatbuhay.ph">
+                      Partner
+                    </SelectItem>
+                    <SelectItem value="donate@angatbuhay.ph">
+                      Contribute
+                    </SelectItem>
+                    <SelectItem value="info@angatbuhay.ph">
+                      Volunteer
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="Subject"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input placeholder="Subject" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="Message"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Textarea
+                    placeholder="Message"
+                    className="h-40 resize-none"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
 
-        <FormField
-          control={form.control}
-          name="Message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Message</FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder="Message"
-                  className="h-40 resize-none"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
         <Button type="submit" className="w-full text-background">
           Submit
         </Button>
