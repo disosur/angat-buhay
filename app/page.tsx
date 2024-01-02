@@ -10,6 +10,7 @@ import NewsCard from "@/components/Shared/NewsCard";
 import { Separator } from "@/components/ui/separator";
 import { Contact } from "@/components/Shared/ContactForm";
 import { Button } from "@/components/ui/button";
+import DoubleImage from "@/components/Shared/Misc/DoubleImage";
 
 export default function Home() {
   return (
@@ -96,13 +97,7 @@ export default function Home() {
               that had several successful initiatives and projects.
             </span>
           </p>
-          <Image
-            src={creative}
-            alt=""
-            height={500}
-            width={500}
-            className="select-none rounded-3xl"
-          />
+          <DoubleImage />
         </div>
 
         <div className="flex flex-row-reverse justify-evenly">
@@ -122,13 +117,7 @@ export default function Home() {
               empower marginalized Filipino communities.
             </span>
           </p>
-          <Image
-            src={creative}
-            alt=""
-            height={500}
-            width={500}
-            className="select-none rounded-3xl"
-          />
+          <DoubleImage />
         </div>
       </section>
 
