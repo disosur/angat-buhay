@@ -24,17 +24,13 @@ const navigationLinks = [
     name: "Our People",
     href: "/our-people",
   },
-  {
-    name: "Museo ng pag-asa",
-    href: "/",
-  },
 ];
 
 export default function Links() {
   return (
     <nav className="space-x-4 ">
       {navigationLinks.map((data) => (
-        <Link key={data.name} href={data.href}>
+        <Link key={data.name} href={data.href} className="hover:text-primary">
           {data.name}
         </Link>
       ))}

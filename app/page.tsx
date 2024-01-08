@@ -10,7 +10,7 @@ import NewsCard from "@/components/Shared/NewsCard";
 import { Separator } from "@/components/ui/separator";
 import { Contact } from "@/components/Shared/ContactForm";
 import { Button } from "@/components/ui/button";
-import DoubleImage from "@/components/Shared/Misc/DoubleImage";
+import CoreValues from "@/components/Shared/CoreValues";
 
 export default function Home() {
   return (
@@ -59,24 +59,8 @@ export default function Home() {
       </section>
       <Separator />
 
-      <section id="core-values" className="flex">
-        <Image
-          src={creative}
-          alt="yes"
-          width={500}
-          height={500}
-          className=" rounded-2xl"
-        />
-        <div>
-          <div>
-            <h3>Creative & Effective Responsiveness</h3>
-            <p>
-              We respond to evolving community needs with creativity and
-              agility, embracing new solutions and empowering individuals to be
-              part of the change.
-            </p>
-          </div>
-        </div>
+      <section id="core-values">
+        <CoreValues />
       </section>
 
       <section id="more info section" className="space-y-20 text-lg">
@@ -97,7 +81,13 @@ export default function Home() {
               that had several successful initiatives and projects.
             </span>
           </p>
-          <DoubleImage />
+          <Image
+            className="rounded-2xl"
+            src={creative}
+            alt="{yes}"
+            height={500}
+            width={500}
+          />
         </div>
 
         <div className="flex flex-row-reverse justify-evenly">
@@ -117,15 +107,19 @@ export default function Home() {
               empower marginalized Filipino communities.
             </span>
           </p>
-          <DoubleImage />
+          <Image
+            className="rounded-2xl"
+            src={creative}
+            alt="{yes}"
+            height={500}
+            width={500}
+          />
         </div>
       </section>
 
-      <section id="recent-news" className="mx-8 space-y-4">
+      <section id="recent-news" className="mx-8 space-y-4 ">
         <h2 className="text-3xl font-semibold">Recent News</h2>
         <div className="flex space-x-4">
-          <NewsCard />
-          <NewsCard />
           <NewsCard />
         </div>
         <Link href="/" className="hover:text-primary">

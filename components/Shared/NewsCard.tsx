@@ -13,7 +13,7 @@ import {
 
 export default function NewsCard() {
   return (
-    <Card className="w-96 ">
+    <Card className="">
       <CardHeader>
         <CardTitle>BAYANIHAN E-KONSULTA, PATULOY NA UMAARANGKADA</CardTitle>
         <div className="flex justify-between">
