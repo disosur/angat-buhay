@@ -2,17 +2,22 @@ import React from "react";
 
 import Image from "next/image";
 
-import aboutHero from "@/public/hero-image.webp";
+import aboutHero from "@/public/Hero-1.webp";
 
 export default function page() {
   return (
     <main className="container">
-      <section id="hero" className="bg-zinc-600">
-        <div className="flex justify-center">
-          <h1 className=" text-[180px] font-bold flex space-x-8">
-            <span className="text-primary ">OUR</span>
-            <span className=" text-secondary">STORY</span>
+      <section id="hero">
+        <div className="z-10 flex justify-center">
+          <h1 className="text-[180px] font-bold flex space-x-8">
+            <span className="text-primary">OUR</span>
+            <span className="text-secondary">STORY</span>
           </h1>
+          <Image
+            src={aboutHero}
+            alt="About Hero Image"
+            className="absolute top-0 left-0 z-0"
+          />
         </div>
       </section>
 

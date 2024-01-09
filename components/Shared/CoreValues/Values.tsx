@@ -10,7 +10,10 @@ import {
 export default function Values() {
   return (
     <>
-      <Accordion type="single" collapsible className="w-full">
+      <Accordion
+        type="single"
+        collapsible
+        className="flex flex-col justify-between w-full h-full">
         <AccordionItem value="item-1">
           <AccordionTrigger>
             Creative & Effective Responsiveness

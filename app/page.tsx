@@ -119,7 +119,9 @@ export default function Home() {
 
       <section id="recent-news" className="mx-8 space-y-4 ">
         <h2 className="text-3xl font-semibold">Recent News</h2>
-        <div className="flex space-x-4">
+        <div className="flex flex-col gap-4">
+          <NewsCard />
+          <NewsCard />
           <NewsCard />
         </div>
         <Link href="/" className="hover:text-primary">
