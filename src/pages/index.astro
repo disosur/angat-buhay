@@ -3,6 +3,9 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+
+import { Button } from "@/components/ui/button"
 ---
 
 <!doctype html>
@@ -12,6 +15,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
+				<Button>Hello World</Button>
 		<main>
 			<h1>🧑‍🚀 Hello, Astronaut!</h1>
 			<p>
